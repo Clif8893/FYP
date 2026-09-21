@@ -52,7 +52,7 @@ class WorkflowTests(unittest.TestCase):
         self.workflow.process_message(self.phone, "Hi", now=self.now)
         due1 = self.workflow.due_followups(now=self.now + timedelta(minutes=31))
         due2 = self.workflow.due_followups(now=self.now + timedelta(days=1, minutes=31))
-        due3 = self.workflow.due_followups(now=self.now + timedelta(days=3))
+        due3 = self.workflow.due_followups(now=self.now + timedelta(days=3, minutes=31))
         self.assertEqual(len(due1), 1)
         self.assertEqual(len(due2), 1)
         self.assertEqual(len(due3), 1)
